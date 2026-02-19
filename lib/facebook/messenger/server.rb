@@ -160,6 +160,7 @@ module Facebook
           # If the application has subscribed to webhooks other than Messenger,
           # 'messaging' won't be available and it is not relevant to us.
           messages = entry.slice('messaging', 'standby').values.flatten
+          Rails.logger.error 1
           next unless messages
 
           # Facebook may batch several items in the 'messaging' array during

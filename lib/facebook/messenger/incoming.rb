@@ -53,6 +53,7 @@ module Facebook
       # @param [Hash] payload A Hash describing a payload from Facebook.
       #
       def self.parse(payload)
+        Rails.logger.error payload
         return MessageEcho.new(payload) if payload_is_echo?(payload)
 
         EVENTS.each do |event, klass|
