@@ -174,6 +174,11 @@ module Facebook
               Facebook::Messenger::Bot.receive(messaging)
             end
           end
+          if  entry['referrals'.freeze]
+            entry['referrals'.freeze].each do |messaging|
+              Facebook::Messenger::Bot.receive(messaging)
+            end
+          end
         end
       end
 
